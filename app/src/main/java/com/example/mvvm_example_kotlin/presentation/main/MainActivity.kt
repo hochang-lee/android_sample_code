@@ -30,8 +30,8 @@ class MainActivity : AppCompatActivity() {
 
         mainViewModel.getSavedList()
         mainViewModel.searchList.observe(this, Observer { result ->
-            val adapter = KaKaoRcyAdapter(result.documents)
-            adapter.setItemOnClickListener(object  : KaKaoRcyAdapter.ItemOnClickListener {
+            val adapter = SearchRcyAdapter(result.documents)
+            adapter.setItemOnClickListener(object  : SearchRcyAdapter.ItemOnClickListener {
                 override fun itemOnClick(v: View, pos: Int) {
                     val itemData = adapter.getList()[pos]
                     mainViewModel.saveDataToDb(itemData.title,itemData.contents,itemData.url)

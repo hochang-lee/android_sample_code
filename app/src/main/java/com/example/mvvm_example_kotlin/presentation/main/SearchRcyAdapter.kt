@@ -9,7 +9,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.mvvm_example_kotlin.R
 import com.example.mvvm_example_kotlin.data.api.response.SearchResponse
 
-class KaKaoRcyAdapter(private val _searchList: List<SearchResponse.Document>) : RecyclerView.Adapter<KaKaoRcyAdapter.ViewHolder>() {
+class SearchRcyAdapter(private val _searchList: List<SearchResponse.Document>) : RecyclerView.Adapter<SearchRcyAdapter.ViewHolder>() {
 
     private var itemOnClickListener : ItemOnClickListener? = null
 
