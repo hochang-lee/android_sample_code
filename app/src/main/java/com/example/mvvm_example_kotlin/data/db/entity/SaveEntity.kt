@@ -1,4 +1,4 @@
-package com.example.mvvm_example_kotlin.model
+package com.example.mvvm_example_kotlin.data.db.entity
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey

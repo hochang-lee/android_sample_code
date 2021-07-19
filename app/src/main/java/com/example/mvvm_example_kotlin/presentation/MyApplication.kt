@@ -1,4 +1,4 @@
-package com.example.mvvm_example_kotlin
+package com.example.mvvm_example_kotlin.presentation
 
 import android.app.Application
 import com.example.mvvm_example_kotlin.di.modules

@@ -1,8 +1,8 @@
-package com.example.mvvm_example_kotlin.remote
+package com.example.mvvm_example_kotlin.data.api.response
 
 import com.google.gson.annotations.SerializedName
 
-data class KakaoSearchResults(
+data class SearchResponse(
     @SerializedName("documents")
     val documents : List<Document>
 ){

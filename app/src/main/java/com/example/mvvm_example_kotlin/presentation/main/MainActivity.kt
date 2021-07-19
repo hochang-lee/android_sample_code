@@ -1,4 +1,4 @@
-package com.example.mvvm_example_kotlin.view
+package com.example.mvvm_example_kotlin.presentation.main
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -9,8 +9,6 @@ import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.mvvm_example_kotlin.R
 import com.example.mvvm_example_kotlin.databinding.ActivityMainBinding
-import com.example.mvvm_example_kotlin.viewmodel.MainViewModel
-import kotlinx.android.synthetic.main.activity_main.*
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class MainActivity : AppCompatActivity() {
@@ -26,24 +24,24 @@ class MainActivity : AppCompatActivity() {
 
         var page = 1
         binding.mainAddBtn.setOnClickListener {
-            mainViewModel.getKakaoSearch("카페","accuracy",page,10)
+            mainViewModel.getSearchData("카페","accuracy",page,10)
             page++
         }
 
-        mainViewModel.getSavedData()
+        mainViewModel.getSavedList()
         mainViewModel.searchList.observe(this, Observer { result ->
             val adapter = KaKaoRcyAdapter(result.documents)
-            adapter.setItemOnClickListener(object  : KaKaoRcyAdapter.ItemOnClickListener{
+            adapter.setItemOnClickListener(object  : KaKaoRcyAdapter.ItemOnClickListener {
                 override fun itemOnClick(v: View, pos: Int) {
                     val itemData = adapter.getList()[pos]
-                    mainViewModel.saveData(itemData.title,itemData.contents,itemData.url)
+                    mainViewModel.saveDataToDb(itemData.title,itemData.contents,itemData.url)
                 }
             })
             binding.mainSearchRcy.adapter = adapter
         })
 
         binding.mainSavedListBtn.setOnClickListener {
-            mainViewModel.getSavedData()
+            mainViewModel.getSavedList()
         }
 
         mainViewModel.savedList.observe(this, Observer {

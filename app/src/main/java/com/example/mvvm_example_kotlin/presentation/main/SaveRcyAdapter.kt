@@ -1,4 +1,4 @@
-package com.example.mvvm_example_kotlin.view
+package com.example.mvvm_example_kotlin.presentation.main
 
 import android.content.Context
 import android.view.LayoutInflater
@@ -7,7 +7,7 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.mvvm_example_kotlin.R
-import com.example.mvvm_example_kotlin.model.SaveDataEntity
+import com.example.mvvm_example_kotlin.data.db.entity.SaveDataEntity
 
 class SaveRcyAdapter(private val _savedList : List<SaveDataEntity>) : RecyclerView.Adapter<SaveRcyAdapter.ViewHolder>() {
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {

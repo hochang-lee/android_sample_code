@@ -1,4 +1,4 @@
-package com.example.mvvm_example_kotlin.remote
+package com.example.mvvm_example_kotlin.data.api
 
 import okhttp3.Interceptor
 import okhttp3.Response

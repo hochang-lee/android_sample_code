@@ -1,7 +1,7 @@
-package com.example.mvvm_example_kotlin.repository
+package com.example.mvvm_example_kotlin.data.respository
 
-import com.example.mvvm_example_kotlin.model.SaveDao
-import com.example.mvvm_example_kotlin.model.SaveDataEntity
+import com.example.mvvm_example_kotlin.data.db.dao.SaveDao
+import com.example.mvvm_example_kotlin.data.db.entity.SaveDataEntity
 
 class SaveRepositoryImpl(private val saveDao: SaveDao) : SaveRepository {
     override suspend fun get(): List<SaveDataEntity> {

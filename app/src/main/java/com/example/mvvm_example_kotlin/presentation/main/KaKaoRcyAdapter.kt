@@ -1,4 +1,4 @@
-package com.example.mvvm_example_kotlin.view
+package com.example.mvvm_example_kotlin.presentation.main
 
 import android.content.Context
 import android.view.LayoutInflater
@@ -7,9 +7,9 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.mvvm_example_kotlin.R
-import com.example.mvvm_example_kotlin.remote.KakaoSearchResults
+import com.example.mvvm_example_kotlin.data.api.response.SearchResponse
 
-class KaKaoRcyAdapter(private val _searchList: List<KakaoSearchResults.Document>) : RecyclerView.Adapter<KaKaoRcyAdapter.ViewHolder>() {
+class KaKaoRcyAdapter(private val _searchList: List<SearchResponse.Document>) : RecyclerView.Adapter<KaKaoRcyAdapter.ViewHolder>() {
 
     private var itemOnClickListener : ItemOnClickListener? = null
 
@@ -25,7 +25,7 @@ class KaKaoRcyAdapter(private val _searchList: List<KakaoSearchResults.Document>
         itemOnClickListener = _itemOnClickListener
     }
 
-    fun getList(): List<KakaoSearchResults.Document> {
+    fun getList(): List<SearchResponse.Document> {
         return _searchList
     }
 
